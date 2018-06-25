@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Array Sorting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+</head>
+<body>
+        <div>use one input at a time and click add</div>
+        <input type="text" id="userinput" />
+        
+        <input type ="button" onclick="addTo()" value="Add" />
+<script type="text/javascript">
+    
+    var myarray = [];
+    // To add array in the empity array  
+    function addTo() {
+        
+        myarray.push(document.getElementById("userinput").value);
+        
+        console.log(myarray); //to confirm it has been added to the array
+        //myarray.split(" ");
+        arraysort();
+    } 
+   //var myarray=[6,7,2,5,9,3,2,"ayna","mele","elhan"];
+    var sortedarray=[];
+   //function to sort an array 
+    function arraysort(){
+        for(var i=0;i<myarray.length;i++){
+            for(var j=i+1;j<myarray.length; j++){
+                if(myarray[i]>myarray[j]){
+                    var  x=myarray[j];
+                    var  y=myarray[i];
+                    myarray[j]=y;
+                    myarray[i]=x;
+                }
+            }
+            //sortedarray[i]=myarray[i];
+      
+        }
+        console.log(myarray);
+        //console.log(sortedarray); 
+    }
+   
+</script>    
+    
+</body>
+</html>
